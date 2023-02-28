@@ -1,0 +1,23 @@
+.pager-wrapper {
+    display: inline-flex;
+
+    p {
+        color: #16a395;
+        font-size: 30px;
+    }
+        
+    button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        margin-top: 5px;
+
+        &.btn-left {
+            margin-right: 10px;
+        }
+
+        &.btn-right {
+            margin-left: 10px;
+        }
+    }
+}

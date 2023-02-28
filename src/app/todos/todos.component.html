@@ -1,9 +1,9 @@
 <div class="todos-wrapper">
     <div class="header-wrapper">
-        <p>Header placeholder</p>
+        <todos-pager [fromDate]="testDates[0]" [toDate]="testDates[testDates.length - 1]"></todos-pager> <!-- TODO: replace test data later -->
     </div>
     <div class="body-wrapper">
-        <todos-calendar></todos-calendar>
+        <todos-calendar [dates]="testDates"></todos-calendar> <!-- TODO: replace test data later -->
     </div>
     <div class="footer-wrapper">
         <p>Footer placeholder</p>
