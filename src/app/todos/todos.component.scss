@@ -1,0 +1,27 @@
+.todos-wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+
+    .header-wrapper {
+        // border: 1px dotted #0313fc;
+        flex: 0 1 auto;
+        text-align: center;
+        color: #16a395;
+        padding: 20px;
+    }
+
+    .body-wrapper {
+        // border: 1px dotted #0313fc;
+        flex: 1 1 auto;
+    }
+
+    .footer-wrapper {
+        // border: 1px dotted #0313fc;
+        flex: 0 1 auto;
+        text-align: center;
+        color: #16a395;
+        padding: 20px;
+    }
+}

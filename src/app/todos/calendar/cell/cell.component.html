@@ -1,0 +1,10 @@
+<div class="cell-wrapper" ngClass="{{ getCellStyle() }}">
+    <div class="cell">
+        <div class="top-section">
+            <p>{{ cellDate | date:'fullDate' }}</p>
+        </div>
+        <div class="bottom-section">
+            <button class="btn-add"><img src="{{ getCellAddIcon() }}"></button>
+        </div>
+    </div>
+</div>
