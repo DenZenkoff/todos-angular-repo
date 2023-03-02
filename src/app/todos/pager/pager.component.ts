@@ -8,4 +8,8 @@ import { Component, Input } from '@angular/core';
 export class PagerComponent {
   @Input() fromDate: Date;
   @Input() toDate: Date;
+
+  pagerLeftClick() {}
+
+  pagerRightClick() {}
 }

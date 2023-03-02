@@ -1,28 +1,17 @@
 import { Component, Input } from '@angular/core';
+import { CellData } from 'src/app/classes/cell-data';
 
 @Component({
   selector: 'calendar-cell',
   templateUrl: './cell.component.html',
   styleUrls: ['./cell.component.scss']
 })
-export class CellComponent { 
-  private _cellDate: Date;
-  private _isWorkDay: Boolean;
-  @Input() set cellDate(date: Date) { this._cellDate = new Date(date); this.setDayType(); }
-  get cellDate(): Date { return this._cellDate }
-
+export class CellComponent {
+  @Input() cellData: CellData;
+  
   constructor() { }
 
-  setDayType() {
-    const day = this.cellDate.getDay();
-    this._isWorkDay = day >= 1 && day <= 5; 
-  }
+  cellClick() { alert('Call from Cell') }
 
-  getCellStyle(): String {
-    return this._isWorkDay ? 'workday' : 'holiday';
-  }
-
-  getCellAddIcon(): String {
-    return this._isWorkDay ? 'assets/t_add_24.png' : 'assets/g_add_24.png'
-  }
+  addBtnClick() { alert('Call from Button') }
 }

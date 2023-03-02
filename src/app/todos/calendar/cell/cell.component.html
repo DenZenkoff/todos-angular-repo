@@ -1,10 +1,10 @@
-<div class="cell-wrapper" ngClass="{{ getCellStyle() }}">
-    <div class="cell">
+<div class="cell-wrapper" ngClass="{{ cellData.Style }}" hidden="{{ cellData.IsHidden }}">
+    <div class="cell" (click)="cellClick()">
         <div class="top-section">
-            <p>{{ cellDate | date:'fullDate' }}</p>
+            <p>{{ cellData.Date | date:'fullDate' }}</p>
         </div>
         <div class="bottom-section">
-            <button class="btn-add"><img src="{{ getCellAddIcon() }}"></button>
+            <button class="btn-add" (click)="addBtnClick()"><img src="{{ cellData.AddImage }}"></button>
         </div>
     </div>
 </div>

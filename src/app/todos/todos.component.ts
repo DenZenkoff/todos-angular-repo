@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TestDataHelperService } from '../services/test-data-helper.service';
 
 @Component({
   selector: 'app-todos',
@@ -6,25 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./todos.component.scss']
 })
 export class TodosComponent {
-  testDates: Array<Date>;
+  testDates: any;
 
-  constructor() {
-    this.testDates = this.getDateArray();
-  }
-
-  getDateArray() : Array<Date> {
-    const dates = new Array<Date>();
-    const currentDate = new Date();
-    let date = new Date();
-    date.setDate(currentDate.getDate() - 6);
-
-    let i = 0;
-    while (i < 28) {
-      dates.push(new Date(date));
-      date.setDate(date.getDate() + 1);
-      i++;
-    }
-
-    return dates;
+  constructor(public testDataHelper: TestDataHelperService) { 
+    this.testDates = testDataHelper.getTestDateArray();
   }
 }

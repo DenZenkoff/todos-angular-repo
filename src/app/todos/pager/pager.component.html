@@ -1,5 +1,5 @@
 <div class="pager-wrapper"> 
-    <button class="btn-left"><img src="assets/t_arrowL_24.png"></button> <!-- TODO: imgs mouseover & mouseleave -->
+    <button class="btn-left" (click)="pagerLeftClick()"><img src="assets/t_arrowL_24.png"></button> <!-- TODO: imgs mouseover & mouseleave -->
     <p>Date range from '{{ fromDate | date:'longDate' }}' to '{{ toDate | date:'longDate' }}'</p>
-    <button class="btn-right"><img src="assets/t_arrowR_24.png"></button> <!-- TODO: imgs mouseover & mouseleave -->
+    <button class="btn-right" (click)="pagerRightClick()"><img src="assets/t_arrowR_24.png"></button> <!-- TODO: imgs mouseover & mouseleave -->
 </div>
