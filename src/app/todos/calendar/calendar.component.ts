@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { CellHelperService } from 'src/app/services/cell-helper.service';
+import { CellHelperService } from 'src/app/services/helpers/cell-helper.service';
 
 @Component({
   selector: 'todos-calendar',
@@ -9,5 +9,5 @@ import { CellHelperService } from 'src/app/services/cell-helper.service';
 export class CalendarComponent {
   @Input() dates: Array<Date>;
 
-  constructor(public cellHelper: CellHelperService) { }
+  constructor(public chService: CellHelperService) { }
 }

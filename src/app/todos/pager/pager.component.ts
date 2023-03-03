@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { DateService } from 'src/app/services/date.service';
 
 @Component({
   selector: 'todos-pager',
@@ -9,7 +10,9 @@ export class PagerComponent {
   @Input() fromDate: Date;
   @Input() toDate: Date;
 
-  pagerLeftClick() {}
+  constructor(private dService: DateService) { }
 
-  pagerRightClick() {}
+  pagerPreviousMonth_Click() { this.dService.getPreviousMonth(); }
+
+  pagerNextMonth_Click() { this.dService.getNextMonth(); }
 }

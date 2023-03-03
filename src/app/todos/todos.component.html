@@ -1,13 +1,13 @@
 <div class="todos-wrapper">
-    <div class="left-side-wrapper">
+    <div class="left-side-wrapper" [ngClass]="sphService.displayStyle">
         <div class="pager-wrapper">
-            <todos-pager [fromDate]="testDates['firstDay']" [toDate]="testDates['lastDay']"></todos-pager>
+            <todos-pager [fromDate]="dService.getCurrentFirstDay()" [toDate]="dService.getCurrentLastDay()"></todos-pager>
         </div>
         <div class="calendar-wrapper">
-            <todos-calendar [dates]="testDates['dates']"></todos-calendar>
+            <todos-calendar [dates]="dService.getCurrentMonth()"></todos-calendar>
         </div>
     </div>
-    <div class="right-side-wrapper" [hidden]="recordsHelper.isHidden">
-        <todos-records></todos-records>
+    <div class="right-side-wrapper">
+        <todos-slide-panel></todos-slide-panel>
     </div>
 </div>

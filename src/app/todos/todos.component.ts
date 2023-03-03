@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { RecordsHelperService } from '../services/records-helper.service';
-import { TestDataHelperService } from '../services/test-data-helper.service';
+import { Component, HostListener } from '@angular/core';
+import { DateService } from 'src/app/services/date.service';
+import { SlidePanelHelperService } from 'src/app/services/helpers/slide-panel-helper.service';
+
 
 @Component({
   selector: 'app-todos',
@@ -8,9 +9,10 @@ import { TestDataHelperService } from '../services/test-data-helper.service';
   styleUrls: ['./todos.component.scss']
 })
 export class TodosComponent {
-  testDates: any;
+  constructor(public dService: DateService, public sphService: SlidePanelHelperService) { }
 
-  constructor(public testDataHelper: TestDataHelperService, public recordsHelper: RecordsHelperService) { 
-    this.testDates = testDataHelper.getTestDateArray();
+  @HostListener('document:keydown.escape', ['$event']) 
+  handleKeyboardEvent(event: KeyboardEvent) {
+    this.sphService.closeSlidePanel();
   }
 }

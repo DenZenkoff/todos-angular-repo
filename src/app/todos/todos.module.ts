@@ -4,8 +4,8 @@ import { CommonModule } from '@angular/common';
 import { TodosComponent } from './todos.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { CellComponent } from './calendar/cell/cell.component';
-import { RecordsComponent } from './records/records.component';
 import { PagerComponent } from './pager/pager.component';
+import { SlidePanelComponent } from './slide-panel/slide-panel.component';
 
 
 @NgModule({
@@ -13,8 +13,8 @@ import { PagerComponent } from './pager/pager.component';
     TodosComponent,
     CalendarComponent,
     CellComponent,
-    RecordsComponent,
     PagerComponent,
+    SlidePanelComponent,
   ],
   imports: [
     CommonModule

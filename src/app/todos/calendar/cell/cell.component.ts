@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CellData } from 'src/app/classes/cell-data';
-import { RecordsHelperService } from 'src/app/services/records-helper.service';
+import { SlidePanelHelperService } from 'src/app/services/helpers/slide-panel-helper.service';
 
 @Component({
   selector: 'calendar-cell',
@@ -10,9 +10,9 @@ import { RecordsHelperService } from 'src/app/services/records-helper.service';
 export class CellComponent {
   @Input() cellData: CellData;
   
-  constructor(private recordsHelper: RecordsHelperService) { }
+  constructor(private sphService: SlidePanelHelperService) { }
 
-  cellClick() { this.recordsHelper.changeVisibility(); }
+  cellClick() { this.sphService.changeDisplayStyle(); }
 
   addBtnClick() { alert('Call from Button') }
 }

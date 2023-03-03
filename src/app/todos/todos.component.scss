@@ -1,6 +1,7 @@
 .todos-wrapper {
     height: 100%;
     width: 100%;
+    padding-top: 5px;
     display: flex;
     flex-flow: row wrap;
 
@@ -19,9 +20,13 @@
         .calendar-wrapper {
             flex: 1 1 auto;
         }
+
+        &.show {
+            opacity: 0.3;
+        }
     }
 
-    .right-side-wrapper {
-        flex: 1;
+    .right-side-wrapper { 
+        flex: 0;
     }
 }

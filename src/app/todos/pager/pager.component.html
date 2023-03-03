@@ -1,5 +1,5 @@
 <div class="pager-wrapper"> 
-    <button class="btn-left" (click)="pagerLeftClick()"><img class="img-left"></button>
+    <button class="btn-left" (click)="pagerPreviousMonth_Click()"><img class="img-left"></button>
     <p>Date range from '{{ fromDate | date:'longDate' }}' to '{{ toDate | date:'longDate' }}'</p>
-    <button class="btn-right" (click)="pagerRightClick()"><img class="img-right"></button>
+    <button class="btn-right" (click)="pagerNextMonth_Click()"><img class="img-right"></button>
 </div>
