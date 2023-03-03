@@ -1,6 +1,5 @@
 export class CellData {
-    Style: String;
-    AddImage: String;
-    Date: Date;
-    IsHidden: Boolean;
+    style: string;
+    date: Date;
+    isHidden: boolean;
 }

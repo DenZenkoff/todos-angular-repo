@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { TodosComponent } from './todos.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { CellComponent } from './calendar/cell/cell.component';
-import { RecordsComponent } from './calendar/records/records.component';
+import { RecordsComponent } from './records/records.component';
 import { PagerComponent } from './pager/pager.component';
 
 

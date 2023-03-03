@@ -1,11 +1,13 @@
 <div class="todos-wrapper">
-    <div class="header-wrapper">
-        <todos-pager [fromDate]="testDates['firstDay']" [toDate]="testDates['lastDay']"></todos-pager> <!-- TODO: replace test data later -->
+    <div class="left-side-wrapper">
+        <div class="pager-wrapper">
+            <todos-pager [fromDate]="testDates['firstDay']" [toDate]="testDates['lastDay']"></todos-pager>
+        </div>
+        <div class="calendar-wrapper">
+            <todos-calendar [dates]="testDates['dates']"></todos-calendar>
+        </div>
     </div>
-    <div class="body-wrapper">
-        <todos-calendar [dates]="testDates['dates']"></todos-calendar> <!-- TODO: replace test data later -->
+    <div class="right-side-wrapper" [hidden]="recordsHelper.isHidden">
+        <todos-records></todos-records>
     </div>
-    <!-- <div class="footer-wrapper">
-        <p>Footer placeholder</p>
-    </div> -->
 </div>

@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CellData } from 'src/app/classes/cell-data';
+import { RecordsHelperService } from 'src/app/services/records-helper.service';
 
 @Component({
   selector: 'calendar-cell',
@@ -9,9 +10,9 @@ import { CellData } from 'src/app/classes/cell-data';
 export class CellComponent {
   @Input() cellData: CellData;
   
-  constructor() { }
+  constructor(private recordsHelper: RecordsHelperService) { }
 
-  cellClick() { alert('Call from Cell') }
+  cellClick() { this.recordsHelper.changeVisibility(); }
 
   addBtnClick() { alert('Call from Button') }
 }

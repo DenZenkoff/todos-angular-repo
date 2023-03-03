@@ -2,26 +2,26 @@
     height: 100%;
     width: 100%;
     display: flex;
-    flex-flow: column;
+    flex-flow: row wrap;
 
-    .header-wrapper {
-        // border: 1px dotted #0313fc;
-        flex: 0 1 auto;
-        text-align: center;
-        color: #16a395;
-        padding: 20px;
+    .left-side-wrapper {
+        flex: 3;
+        display: flex;
+        flex-flow: column wrap;
+
+        .pager-wrapper {
+            flex: 0 1 auto;
+            text-align: center;
+            color: #16a395;
+            padding: 20px;
+        }
+
+        .calendar-wrapper {
+            flex: 1 1 auto;
+        }
     }
 
-    .body-wrapper {
-        // border: 1px dotted #0313fc;
-        flex: 1 1 auto;
+    .right-side-wrapper {
+        flex: 1;
     }
-
-    // .footer-wrapper {
-    //     // border: 1px dotted #0313fc;
-    //     flex: 0 1 auto;
-    //     text-align: center;
-    //     color: #16a395;
-    //     padding: 20px;
-    // }
 }

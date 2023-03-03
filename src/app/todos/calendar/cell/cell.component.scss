@@ -9,7 +9,7 @@
         color: #16a395;
     }
     &.workday:hover {
-        background-color: #333333;
+        background-color: #3a3a3a;
     }
 
     &.holiday {
@@ -17,7 +17,7 @@
         color: #2e2e2e;
     }
     &.holiday:hover {
-        background-color: #148f83;
+        background-color: #0e8176;
     }
 
     .cell {
@@ -37,14 +37,36 @@
         .bottom-section {
             flex: 0 1 auto;
             padding: 10px;
+            justify-content: center;
+            font-size: 10px;
+            text-align: right;
             
-            .btn-add {
-                background-color: transparent; 
-                border: none;
-                margin-right: 5px;
-                float: right;
-                cursor: pointer;
-            }
+            // .btn-add {
+            //     background-color: transparent; 
+            //     border: none;
+            //     margin-right: 5px;
+            //     float: right;
+            //     cursor: pointer;
+
+            //     img {
+            //         width: 24px;
+            //         height: 24px;
+                    
+            //         &.workday {
+            //             content: url('~src/assets/t_add_24.png');
+            //         }
+            //         &.workday:hover {
+            //             content: url('~src/assets/t_add_24_h.png');
+            //         }
+
+            //         &.holiday {
+            //             content: url('~src/assets/g_add_24.png');
+            //         }
+            //         &.holiday:hover {
+            //             content: url('~src/assets/g_add_24_h.png');
+            //         }
+            //     }
+            // }
         } 
     }
 }

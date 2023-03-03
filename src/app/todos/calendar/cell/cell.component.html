@@ -1,10 +1,11 @@
-<div class="cell-wrapper" ngClass="{{ cellData.Style }}" hidden="{{ cellData.IsHidden }}">
+<div class="cell-wrapper" [ngClass]="cellData.style" [hidden]="cellData.isHidden">
     <div class="cell" (click)="cellClick()">
         <div class="top-section">
-            <p>{{ cellData.Date | date:'fullDate' }}</p>
+            <p>{{ cellData.date | date:'fullDate' }}</p>
         </div>
         <div class="bottom-section">
-            <button class="btn-add" (click)="addBtnClick()"><img src="{{ cellData.AddImage }}"></button>
+            <p>no records found</p>
+            <!-- <button class="btn-add" (click)="addBtnClick()"><img [ngClass]="cellData.style"></button> -->
         </div>
     </div>
 </div>
