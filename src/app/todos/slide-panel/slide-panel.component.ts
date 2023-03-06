@@ -9,4 +9,8 @@ import { SlidePanelHelperService } from 'src/app/services/helpers/slide-panel-he
 export class SlidePanelComponent {
 
   constructor(public sphService: SlidePanelHelperService) { }
+
+  getVisibility(): string {
+    return this.sphService.isVisible ? 'show' : 'hide';
+  }
 }

@@ -1,7 +1,7 @@
 <div class="todos-wrapper">
-    <div class="left-side-wrapper" [ngClass]="sphService.displayStyle">
+    <div class="left-side-wrapper" [ngClass]="getSlidePanelVisibility()">
         <div class="pager-wrapper">
-            <todos-pager [fromDate]="dService.getCurrentFirstDay()" [toDate]="dService.getCurrentLastDay()"></todos-pager>
+            <todos-pager [fromDate]="dService.getFirstDayOfMonth()" [toDate]="dService.getLastDayOfMonth()"></todos-pager>
         </div>
         <div class="calendar-wrapper">
             <todos-calendar [dates]="dService.getCurrentMonth()"></todos-calendar>

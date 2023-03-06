@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { CellData } from 'src/app/classes/cell-data';
-import { CommonStyles } from 'src/app/enums/common-styles';
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class CellHelperService {
-  constructor() { }
+  private _styles: any = {
+    workday: ' workday ',
+    holiday: ' holiday '
+  }
 
   getCellData(date: Date): CellData {
     const data = new CellData();
@@ -15,12 +16,18 @@ export class CellHelperService {
     if (date) {
       const day = date.getDay();
       
-      data.style = day >= 1 && day <= 5 ? CommonStyles.workday : CommonStyles.holiday;
       data.date = new Date(date);
-    } else {
-      data.isHidden = true;
+      data.isWorkdate = day >= 1 && day <= 5;
     }
 
     return data;
+  }
+
+  getCellStyle(data: CellData): string {
+    return data.isWorkdate ? this._styles.workday : this._styles.holiday;
+  }
+
+  isCellHidden(data: CellData): boolean {
+    return data.date ? false : true;
   }
 }

@@ -6,5 +6,16 @@
 
 html, body { 
     height: 100%; 
-    overflow: hidden;
+    width: 100%;
+    background-color: #1d1d1d;
+}
+
+@media (width > 2000px) {
+    html, body { 
+        height: 100%; 
+        width: 2000px;
+        background-color: #1d1d1d;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }

@@ -14,11 +14,11 @@ export class DateService {
     this._currentYear = date.getFullYear(); 
   }
 
-  getCurrentFirstDay(): Date {
+  getFirstDayOfMonth(): Date {
     return this.gatFirstDay(this._currentYear, this._currentMonth);
   }
 
-  getCurrentLastDay(): Date {
+  getLastDayOfMonth(): Date {
     return this.gatLastDay(this._currentYear, this._currentMonth);
   }
 
@@ -62,8 +62,8 @@ export class DateService {
       firstDay.setDate(firstDay.getDate() + 1);
     }
 
-    if (dates.length < 42) {
-      for(let i = dates.length - 1; i < 42; i++)
+    if (dates.length < 41) {
+      for(let i = dates.length - 1; i < 41; i++)
         dates.length++;
     }
 

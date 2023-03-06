@@ -12,7 +12,21 @@ export class TodosComponent {
   constructor(public dService: DateService, public sphService: SlidePanelHelperService) { }
 
   @HostListener('document:keydown.escape', ['$event']) 
-  handleKeyboardEvent(event: KeyboardEvent) {
+  onEscapeKeydownHanlder(event: KeyboardEvent) {
     this.sphService.closeSlidePanel();
+  }
+
+  @HostListener('document:keydown.arrowleft', ['$event']) 
+  onArrowleftKeydownHanlder(event: KeyboardEvent) {
+    this.dService.getPreviousMonth();
+  }  
+  
+  @HostListener('document:keydown.arrowright', ['$event']) 
+  onArrowRightKeydownHanlder(event: KeyboardEvent) {
+    this.dService.getNextMonth();    
+  }
+
+  getSlidePanelVisibility(): string {
+    return this.sphService.isVisible ? 'show' : 'hide';
   }
 }
