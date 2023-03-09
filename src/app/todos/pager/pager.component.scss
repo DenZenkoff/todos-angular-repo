@@ -21,21 +21,21 @@
         }
 
         img {
-            width: 24px;
-            height: 24px;
+            width: 28px;
+            height: 28px;
 
             &.img-left {
-                content: url('~src/assets/t_arrowL_24.png');
+                content: url('~src/assets/t_arrowL_32.png');
             }
             &.img-left:hover {
-                content: url('~src/assets/t_arrowL_24_h.png');
+                content: url('~src/assets/t_arrowL_32_h.png');
             }
 
             &.img-right {
-                content: url('~src/assets/t_arrowR_24.png');
+                content: url('~src/assets/t_arrowR_32.png');
             }
             &.img-right:hover {
-                content: url('~src/assets/t_arrowR_24_h.png');
+                content: url('~src/assets/t_arrowR_32_h.png');
             }
         }
     }

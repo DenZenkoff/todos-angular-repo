@@ -1,15 +1,11 @@
 import { Injectable } from '@angular/core';
 import { CellData } from 'src/app/classes/cell-data';
+import { Styles } from 'src/app/enums/styles';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CellHelperService {
-  private _styles: any = {
-    workday: ' workday ',
-    holiday: ' holiday '
-  }
-
   getCellData(date: Date): CellData {
     const data = new CellData();
 
@@ -24,7 +20,7 @@ export class CellHelperService {
   }
 
   getCellStyle(data: CellData): string {
-    return data.isWorkdate ? this._styles.workday : this._styles.holiday;
+    return data.isWorkdate ? Styles.workday : Styles.holiday;
   }
 
   isCellHidden(data: CellData): boolean {

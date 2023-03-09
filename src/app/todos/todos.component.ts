@@ -9,7 +9,9 @@ import { SlidePanelHelperService } from 'src/app/services/helpers/slide-panel-he
   styleUrls: ['./todos.component.scss']
 })
 export class TodosComponent {
-  constructor(public dService: DateService, public sphService: SlidePanelHelperService) { }
+  constructor(
+    public dateService: DateService, 
+    public sphService: SlidePanelHelperService) { }
 
   @HostListener('document:keydown.escape', ['$event']) 
   onEscapeKeydownHanlder(event: KeyboardEvent) {
@@ -18,15 +20,11 @@ export class TodosComponent {
 
   @HostListener('document:keydown.arrowleft', ['$event']) 
   onArrowleftKeydownHanlder(event: KeyboardEvent) {
-    this.dService.getPreviousMonth();
+    this.dateService.getPreviousMonth();
   }  
   
   @HostListener('document:keydown.arrowright', ['$event']) 
   onArrowRightKeydownHanlder(event: KeyboardEvent) {
-    this.dService.getNextMonth();    
-  }
-
-  getSlidePanelVisibility(): string {
-    return this.sphService.isVisible ? 'show' : 'hide';
+    this.dateService.getNextMonth();    
   }
 }

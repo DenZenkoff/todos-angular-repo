@@ -1,0 +1,15 @@
+<div class="slide-panel-wrapper" [ngClass]="sphService.getVisibilityStyle()">
+  <div class="slide-panel-header">
+    <div class="header-close-section">
+      <button class="btn-close" (click)="sphService.closeSlidePanel()"><img class="img-close"></button>
+    </div>
+    <div class="header-text-section">
+      <p>{{ data.date | date:'fullDate' }}</p>
+    </div>
+  </div>
+  <hr>
+  <div class="slide-panel-content">
+    <p>{{ data.records.length | todosCounter:'slideRecords' }}</p>
+    <button class="btn-add-record">Add Record</button>
+  </div>
+</div>

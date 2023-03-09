@@ -1,21 +1,40 @@
 import { Injectable } from '@angular/core';
-
+import { SlidePanelData } from 'src/app/classes/slide-panel-data';
+import { Styles } from 'src/app/enums/styles';
+import { DataService } from 'src/app/services/data.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SlidePanelHelperService {
-  private _isVisible: boolean;
+  private _isVisible: boolean; 
+  get isVisible(): boolean { return this._isVisible; }
+  
+  private _data: SlidePanelData = new SlidePanelData();
+  get data(): SlidePanelData { return this._data; }
 
-  get isVisible(): boolean {
-    return this._isVisible;
-  }
+  constructor(private dataService: DataService) { }
 
-  openSlidePanel() {
-    this._isVisible = true;
+  openSlidePanel(date: Date) {
+    if (!this._isVisible) {
+      this._isVisible = true;
+      this._data = this.getData(date);
+    }
   }
 
   closeSlidePanel() {
     this._isVisible = false;
+  }
+
+  getVisibilityStyle(): string {
+    return this._isVisible ? Styles.show : Styles.hide;
+  }
+
+  private getData(date: Date): SlidePanelData {
+    const data = new SlidePanelData();
+    data.date = new Date(date);
+    data.records = this.dataService.getRecordsByDate(date);
+
+    return data;
   }
 }

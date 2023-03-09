@@ -1,0 +1,85 @@
+.slide-panel-wrapper {
+  background-color: #222222;
+  color: #16a395;
+  position: fixed;
+  top: 0;
+  right: -35%;
+  width: 30%;
+  height: 100%;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  display: flex;
+  flex-flow: column wrap;
+
+  &.show {
+    right: 0;
+  }
+
+  .slide-panel-header {
+    flex: 0 1 auto;
+    display: flex;
+    flex-flow: row wrap;
+    height: 40px;
+    padding: 20px;
+
+    .header-close-section {
+      flex: 0 1 auto;
+      margin-top: auto;
+      margin-bottom: auto;
+
+      button {
+        &.btn-close {
+          background: transparent;
+          border: none;
+
+          img {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+  
+            &.img-close {
+              content: url('~src/assets/t_x_mark_32.png');
+            }
+            &.img-close:hover {
+              content: url('~src/assets/t_x_mark_32_h.png');
+            }
+          }
+        }
+      }
+    }
+
+    .header-text-section {
+      flex: 1 1 auto;
+      text-align: center;
+      font-size: 24px;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+
+  hr {
+    border: 1px solid #16a395;
+  }
+
+  .slide-panel-content {
+    flex: 1 1 auto;
+    padding: 20px;
+
+    button {
+      &.btn-add-record {
+        background-color: transparent;
+        border: 1px solid #16a395;
+        color: #16a395;
+        font-size: 16px;
+        cursor: pointer;
+        padding: 10px;
+      }
+      &.btn-add-record:hover {
+        border: 1px solid #007c70;
+        color: #007c70;
+      }
+    }
+  }
+}

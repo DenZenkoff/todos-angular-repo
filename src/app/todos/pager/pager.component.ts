@@ -10,9 +10,5 @@ export class PagerComponent {
   @Input() fromDate: Date;
   @Input() toDate: Date;
 
-  constructor(private dService: DateService) { }
-
-  pagerPreviousMonth_Click() { this.dService.getPreviousMonth(); }
-
-  pagerNextMonth_Click() { this.dService.getNextMonth(); }
+  constructor(public dateService: DateService) { }
 }

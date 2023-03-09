@@ -7,5 +7,7 @@ export class TestDataHelperService {
 
   constructor() { }
 
-  getTestDateArray() : any {}
+  getTestDateArray(): Array<string> { 
+    return  [ 'record1',  'record2', 'record3', 'record3', 'record4', 'record5', 'record6' ]; 
+  }
 }
