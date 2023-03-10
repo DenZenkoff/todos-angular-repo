@@ -7,7 +7,7 @@ import { DataService } from 'src/app/services/data.service';
   providedIn: 'root'
 })
 export class SlidePanelHelperService {
-  private _isVisible: boolean = false; 
+  private _isVisible: boolean; 
   get isVisible(): boolean { console.warn(this._isVisible); return this._isVisible; }
   
   private _data: SlidePanelData;
