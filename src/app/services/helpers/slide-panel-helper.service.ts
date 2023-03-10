@@ -7,13 +7,15 @@ import { DataService } from 'src/app/services/data.service';
   providedIn: 'root'
 })
 export class SlidePanelHelperService {
-  private _isVisible: boolean; 
-  get isVisible(): boolean { return this._isVisible; }
+  private _isVisible: boolean = false; 
+  get isVisible(): boolean { console.warn(this._isVisible); return this._isVisible; }
   
-  private _data: SlidePanelData = new SlidePanelData();
+  private _data: SlidePanelData;
   get data(): SlidePanelData { return this._data; }
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService) { 
+    this.setDefault();
+  }
 
   openSlidePanel(date: Date) {
     if (!this._isVisible) {
@@ -36,5 +38,11 @@ export class SlidePanelHelperService {
     data.records = this.dataService.getRecordsByDate(date);
 
     return data;
+  }
+
+  private setDefault(): void {
+    this._data  = new SlidePanelData();
+    this._data.date = new Date();
+    this._data.records = [];
   }
 }

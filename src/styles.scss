@@ -1,15 +1,22 @@
+// webkit settings
+::-webkit-scrollbar {
+    width: 0; 
+}
+
+// common settings
 * {
     padding: 0;
     margin: 0;
     font-family: 'Tilt Neon', cursive;
+    outline: none;
 }
 
+// html & body settings
 html, body { 
     height: 100%; 
     width: 100%;
     background-color: #1d1d1d;
 }
-
 @media (width > 2000px) {
     html, body { 
         height: 100%; 

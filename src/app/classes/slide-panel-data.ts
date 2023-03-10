@@ -1,4 +1,4 @@
 export class SlidePanelData {
-    date: Date = new Date();
-    records: Array<string> = [];
+    date: Date;
+    records: Array<string>;
 }

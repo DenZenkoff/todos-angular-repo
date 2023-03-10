@@ -22,8 +22,4 @@ export class CellHelperService {
   getCellStyle(data: CellData): string {
     return data.isWorkdate ? Styles.workday : Styles.holiday;
   }
-
-  isCellHidden(data: CellData): boolean {
-    return data.date ? false : true;
-  }
 }

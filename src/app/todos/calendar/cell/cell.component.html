@@ -1,4 +1,4 @@
-<div class="cell-wrapper" [ngClass]="chServise.getCellStyle(data)" [hidden]="chServise.isCellHidden(data)">
+<div class="cell-wrapper" [ngClass]="chServise.getCellStyle(data)" [hidden]="!data.date">
     <div class="cell" (click)="onCellClick_Event.emit(this.data.date)">
         <div class="top-section">
             <p>{{ data.date | date:'fullDate' }}</p>

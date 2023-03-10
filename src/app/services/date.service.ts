@@ -44,6 +44,7 @@ export class DateService {
 
   private getMonth(year: number, month: number): Array<Date> {
     const dates = new Array<Date>();
+    const numberOfCells = 41;
 
     const firstDay = new Date(year, month, 1);
     const lastDay = new Date(year, month + 1, 0);
@@ -62,8 +63,8 @@ export class DateService {
       firstDay.setDate(firstDay.getDate() + 1);
     }
 
-    if (dates.length < 41) {
-      for(let i = dates.length - 1; i < 41; i++)
+    if (dates.length < numberOfCells) {
+      for(let i = dates.length - 1; i < numberOfCells; i++)
         dates.length++;
     }
 

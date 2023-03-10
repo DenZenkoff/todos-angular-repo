@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { SlidePanelData } from 'src/app/classes/slide-panel-data';
 import { SlidePanelHelperService } from 'src/app/services/helpers/slide-panel-helper.service';
 
 @Component({
@@ -8,9 +7,5 @@ import { SlidePanelHelperService } from 'src/app/services/helpers/slide-panel-he
   styleUrls: ['./slide-panel.component.scss']
 })
 export class SlidePanelComponent {
-  public data: SlidePanelData = new SlidePanelData();
-
-  constructor(public sphService: SlidePanelHelperService) {
-    this.data = sphService.data;
-  }
+  constructor(public sphService: SlidePanelHelperService) { }
 }

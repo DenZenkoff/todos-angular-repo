@@ -7,6 +7,8 @@ import { CellComponent } from './calendar/cell/cell.component';
 import { PagerComponent } from './pager/pager.component';
 import { SlidePanelComponent } from './calendar/slide-panel/slide-panel.component';
 import { TodosCounterPipe } from '../pipes/todos-counter.pipe';
+import { RecordComponent } from './calendar/slide-panel/record/record.component';
+import { ClickedOutsideDirective } from '../directives/clicked-outside.directive';
 
 @NgModule({
   declarations: [
@@ -16,9 +18,13 @@ import { TodosCounterPipe } from '../pipes/todos-counter.pipe';
     CellComponent,
     PagerComponent,
     SlidePanelComponent,
+    RecordComponent,
 
     // PIPES
-    TodosCounterPipe
+    TodosCounterPipe,
+
+    // DIRECTIVES
+    ClickedOutsideDirective
   ],
   imports: [
     CommonModule

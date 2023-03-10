@@ -27,4 +27,16 @@ export class TodosComponent {
   onArrowRightKeydownHanlder(event: KeyboardEvent) {
     this.dateService.getNextMonth();    
   }
+
+  // @HostListener('document:click', ['$event.target'])
+  // onDocumentClick(target: any) {
+  //   const slidePanel = 'slide-panel-wrapper show'
+
+  //   // console.warn(target);
+  //   // console.warn(slidePanel);
+  //   // console.warn(target == slidePanel);
+
+  //   if (this.sphService.isVisible)
+  //     this.sphService.closeSlidePanel
+  // }
 }
