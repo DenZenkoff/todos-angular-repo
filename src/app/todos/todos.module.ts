@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { TodosComponent } from './todos.component';
 import { CalendarComponent } from './calendar/calendar.component';
@@ -12,6 +13,7 @@ import { ClickedOutsideDirective } from '../directives/clicked-outside.directive
 
 @NgModule({
   declarations: [
+    
     // COMPONENTS
     TodosComponent,
     CalendarComponent,
@@ -27,7 +29,8 @@ import { ClickedOutsideDirective } from '../directives/clicked-outside.directive
     ClickedOutsideDirective
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
   ],
   exports: [
     TodosComponent

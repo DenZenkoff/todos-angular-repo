@@ -29,6 +29,7 @@
             }
             &.img-left:hover {
                 content: url('~src/assets/t_arrowL_32_h.png');
+                transform: scale(1.2);
             }
 
             &.img-right {
@@ -36,6 +37,7 @@
             }
             &.img-right:hover {
                 content: url('~src/assets/t_arrowR_32_h.png');
+                transform: scale(1.2);
             }
         }
     }

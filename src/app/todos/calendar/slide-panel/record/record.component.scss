@@ -8,46 +8,49 @@
         display: flex;
         flex-flow: row nowrap;
 
-        .record-text {
+        input[type="text"] {
             flex: auto;
-            margin: auto 5px;
-
-            input[type="text"] {
-                font-size: 18px;
-                border: none;
-                background-color: #2e2e2e;
-                width: 95%;
-                color: #16a395;
-                padding: 5px 10px;
-            }
-
-            input[type="text"]:disabled {
-                background-color: transparent;
-            }
+            font-size: 18px;
+            border: none;
+            background-color: #2e2e2e;
+            color: #16a395;
+            padding: 5px 10px;
+            margin-right: 5px;
         }
 
-        .record-imgs {
+        input[type="text"]:disabled {
+            background-color: transparent;
+        }
+
+        button {
+            padding: 0 10px;
+            background-color: transparent;
+            border: none;
+            border-left: 1px solid #16a395;
+
+            &.save-btn { }
+
+            &.delete-btn { }
+
             img {
-                width: 24px;
-                height: 24px;
-                cursor: pointer;
+                width: 26px;
+                height: 26px;
                 margin-top: auto;
                 margin-bottom: auto;
-                padding: 5px;
-                border-left: 1px solid #16a395;
+                cursor: pointer;
         
                 &.img-save {
-                    content: url('~src/assets/r_delete_32.png');
+                    content: url('~src/assets/g_checked_32.png');
                 }
                 &.img-save:hover {
-        
+                    transform: scale(1.1);
                 }
         
                 &.img-delete {
                     content: url('~src/assets/r_delete_32.png');
                 }
                 &.img-delete:hover {
-        
+                    transform: scale(1.1);
                 }
             }
         }

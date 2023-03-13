@@ -17,11 +17,6 @@
     opacity: 1;
   }
 
-  &.hide {
-    visibility: hidden;
-    opacity: 0;
-  }
-
   .slide-panel-content {
     height: 100%;
     width: 40%;
@@ -77,6 +72,7 @@
               }
               &.img-close:hover {
                 content: url('~src/assets/t_x_mark_32_h.png');
+                transform: scale(1.2);
               }
             }
           }

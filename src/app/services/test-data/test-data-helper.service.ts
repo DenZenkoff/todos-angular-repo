@@ -11,8 +11,7 @@ export class TestDataHelperService {
     return  [ 
               'record1',  
               'record2', 
-              'record3', 
-              'record3', 
+              'record3',  
               'record4', 
               'record5', 
               'record6', 

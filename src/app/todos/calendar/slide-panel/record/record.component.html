@@ -1,11 +1,8 @@
 <div class="record-wrapper">
     <div class="record-content">
-        <div class="record-text">
-            <input type="text" [value]="data">
-        </div>
-        <div class="record-imgs">
-            <img class="img-save">
-            <img class="img-delete">
-        </div>
+        <input type="text" [value]="record.id">
+        <input type="text" [(ngModel)]="record.text">
+        <button class="save-btn" (click)="rdhService.saveRecord(date, record.id)"><img class="img-save"></button>
+        <button class="delete-btn" (click)="rdhService.removeRecord(date, record.id)"><img class="img-delete"></button>        
     </div>
 </div>
