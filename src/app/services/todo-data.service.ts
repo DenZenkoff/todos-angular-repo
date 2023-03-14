@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { RecordData } from '../classes/record-data';
+import { RecordData } from 'src/app/classes/record-data';
 
 @Injectable({
   providedIn: 'root'
@@ -35,22 +35,20 @@ export class TodoDataService {
       const index = todos.findIndex(todo => todo.id == id);
       if (index != -1) 
         todos.splice(index, 1);
-
       localStorage.setItem(key, this.parseArrayToJSONString(todos));
     }
   }
 
   private getSavedTodos(key: string): Array<RecordData> {
     const records = localStorage.getItem(key);
-
-    return records ? this.parseJsonStringToArray(records) : [];
+    return records ? this.parseJSONStringToArray(records) : [];
   }
 
   private parseArrayToJSONString(records: Array<RecordData>): string {
     return JSON.stringify(records);
   }
 
-  private parseJsonStringToArray(jsonString: string): Array<RecordData> {
+  private parseJSONStringToArray(jsonString: string): Array<RecordData> {
     return JSON.parse(jsonString);
   }
 }

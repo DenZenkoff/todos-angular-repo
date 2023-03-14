@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
-import { RecordData } from 'src/app/classes/record-data';
 import { SlidePanelData } from 'src/app/classes/slide-panel-data';
 import { Styles } from 'src/app/enums/styles';
-import { TodoDataService } from '../todo-data.service';
-import { RecordDataHelperService } from './record-data-helper.service';
+import { TodoDataService } from 'src/app/services/todo-data.service';
+import { RecordDataHelperService } from 'src/app/services/helpers/record-data-helper.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SlidePanelHelperService {
   private _isVisible: boolean; 
-  get isVisible(): boolean { return this._isVisible; }
-  
-  private _data: SlidePanelData;
+    
+  private _data: SlidePanelData; 
+  get data(): SlidePanelData { return this._data; }
 
   constructor(private rdhService: RecordDataHelperService, 
               private tdService: TodoDataService) { this.setDefault(); }
@@ -33,29 +32,15 @@ export class SlidePanelHelperService {
     return this._isVisible ? Styles.show : Styles.hide;
   }
 
-  getRecords(): Array<RecordData> {
-    return this._data.records;
-  }
-
-  getDate(): Date {
-    return this._data.date;
-  }
-
-  addNewRecord() {
+  addEmptyRecordRow() {
     this.rdhService.addRecord();
   }
 
   private getData(date: Date): SlidePanelData {
-    const data = new SlidePanelData();
-    data.date = new Date(date);
-    data.records = this.tdService.getTodos(date);
-
-    return data;
+    return new SlidePanelData(new Date(date), this.tdService.getTodos(date));
   }
 
   private setDefault(): void {
-    this._data  = new SlidePanelData();
-    this._data.date = new Date();
-    this._data.records = [];
+    this._data  = new SlidePanelData(new Date(), []);
   }
 }

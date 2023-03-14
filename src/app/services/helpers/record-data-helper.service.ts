@@ -31,10 +31,9 @@ export class RecordDataHelperService {
   }
 
   removeRecord(date: Date, id: number) {      
-    const record = this._records.find(record => record.id == id);
-    if (record) {
-      const index = this._records.findIndex(todo => todo.id == id);
-      this._records.splice(index, 1);
+    const index = this._records.findIndex(todo => todo.id == id);
+    if (index != -1) {
+      const record = this._records.splice(index, 1)[0];
 
       if (!record.isNew) 
         this.tdServise.removeTodo(date, id);

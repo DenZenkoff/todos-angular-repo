@@ -5,17 +5,17 @@
         <button class="btn-close" (click)="sphService.closeSlidePanel()"><img class="img-close"></button>
       </div>
       <div class="header-text-section">
-        <p class="records-date">{{ sphService.getDate() | date:'fullDate' }}</p>
-        <p class="records-counter">({{ sphService.getRecords().length | todosCounter:'slideRecords' }})</p>
+        <p class="records-date">{{ sphService.data.date | date:'fullDate' }}</p>
+        <p class="records-counter">({{ sphService.data.records.length | todosCounter:'slideRecords' }})</p>
       </div>
     </div>
     <hr>
     <div class="slide-panel-records">
       <div class="slide-panel-btns">
-        <button class="btn-add-record" (click)="sphService.addNewRecord()">Add Record</button>
+        <button class="btn-add-record" (click)="sphService.addEmptyRecordRow()">Add Record</button>
       </div>
       <div class="slide-panel-records">
-        <slide-panel-record *ngFor="let record of sphService.getRecords()" [record]="record" [date]="sphService.getDate()"></slide-panel-record>
+        <slide-panel-record *ngFor="let record of sphService.data.records" [record]="record" [date]="sphService.data.date"></slide-panel-record>
       </div>
     </div>
   </div>
