@@ -1,8 +1,10 @@
+@use 'src/app/styles/style-variables.scss' as sv;
+
 .record-wrapper {
     margin-bottom: 10px;
     padding: 5px;
-    border: 1px solid #16a395;
-    color: #16a395;
+    border: sv.$border;
+    color: sv.$secondary-color;
 
     .record-content {
         display: flex;
@@ -12,8 +14,8 @@
             flex: auto;
             font-size: 18px;
             border: none;
-            background-color: #2e2e2e;
-            color: #16a395;
+            background-color: sv.$basic-color;
+            color: sv.$secondary-color;
             padding: 5px 10px;
             margin-right: 5px;
         }
@@ -26,7 +28,7 @@
             padding: 0 10px;
             background-color: transparent;
             border: none;
-            border-left: 1px solid #16a395;
+            border-left: sv.$border;
 
             &.save-btn { }
 

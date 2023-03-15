@@ -1,3 +1,5 @@
+@use 'src/app/styles/style-variables.scss' as sv;
+
 .todos-wrapper {
     height: 99%;
     width: 100%;
@@ -13,7 +15,7 @@
         .pager-wrapper {
             flex: 0 1 auto;
             text-align: center;
-            color: #16a395;
+            color: sv.$secondary-color;
             padding: 20px;
         }
 

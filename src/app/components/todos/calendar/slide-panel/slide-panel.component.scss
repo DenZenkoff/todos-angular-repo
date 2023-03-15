@@ -1,7 +1,9 @@
+@use 'src/app/styles/style-variables.scss' as sv;
+
 .slide-panel-wrapper {
   background-color: #0000006b;
   backdrop-filter: blur(3px);
-  color: #16a395;
+  color: sv.$secondary-color;
   position: fixed;
   display: flex;
   top: 0;
@@ -20,7 +22,7 @@
   .slide-panel-content {
     height: 100%;
     width: 40%;
-    background-color: #222222;
+    background-color: sv.$sp-bColor;
     display: flex;
     position: fixed;
     flex-flow: column wrap;
@@ -34,8 +36,8 @@
     }
 
     @media screen and (width <= 1000px) {
-      background-color: #222222;
-      color: #16a395;
+      background-color: sv.$sp-bColor;
+      color: sv.$secondary-color;
       position: fixed;
       display: flex;
       flex-flow: column wrap;
@@ -99,7 +101,7 @@
     }
   
     hr {
-      border: 1px solid #16a395;
+      border: sv.$border;
       margin: 10px 0;
     }
   
@@ -117,15 +119,15 @@
         button {
           &.btn-add-record {
             background-color: transparent;
-            border: 2px solid #16a395;
-            color: #16a395;
+            border: sv.$border;
+            color: sv.$secondary-color;
             font-size: 16px;
             cursor: pointer;
             padding: 10px;
           }
           &.btn-add-record:hover {
-            border: 2px solid #007c70;
-            color: #007c70;
+            border: sv.$border-hover;
+            color: sv.$secondary-color-hover;
           }
         }
       }

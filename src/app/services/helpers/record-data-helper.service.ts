@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { RecordData } from 'src/app/classes/record-data';
-import { TodoDataService } from '../todo-data.service';
+import { TodoDataService } from 'src/app/services/todo-data.service';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +23,7 @@ export class RecordDataHelperService {
 
   saveRecord(date: Date, id: number) {
     let record = this._records.find(record => record.id == id);
-    if (record) {
+    if (record && record.text) {
       record.isNew = false;
       
       this.tdServise.saveTodo(date, record);

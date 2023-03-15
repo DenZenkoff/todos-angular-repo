@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
-import { TodosModule } from './todos/todos.module';
+import { AppComponent } from 'src/app/app.component';
+import { TodosModule } from 'src/app/modules/todos.module';
+import { TimesheetsModule } from 'src/app/modules/timesheets.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { TodosModule } from './todos/todos.module';
   ],
   imports: [
     BrowserModule,
-    TodosModule
+    TodosModule,
+    TimesheetsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

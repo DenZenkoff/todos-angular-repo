@@ -1,12 +1,12 @@
-<div class="slide-panel-wrapper" [ngClass]="sphService.getVisibilityStyle()" todoClickedOutside (clickedOutside)="sphService.closeSlidePanel()">
+<div class="slide-panel-wrapper" [ngClass]="sphService.getVisibilityStyle()" clickedOutside (clicked)="sphService.closeSlidePanel()">
   <div class="slide-panel-content" [ngClass]="sphService.getVisibilityStyle()">
     <div class="slide-panel-header">
       <div class="header-close-section">
         <button class="btn-close" (click)="sphService.closeSlidePanel()"><img class="img-close"></button>
       </div>
       <div class="header-text-section">
-        <p class="records-date">{{ sphService.data.date | date:'fullDate' }}</p>
-        <p class="records-counter">({{ sphService.data.records.length | todosCounter:'slideRecords' }})</p>
+        <p class="records-date">{{ data.date | date:'fullDate' }}</p>
+        <p class="records-counter">({{ data.records.length | todosCounter:'slideRecords' }})</p>
       </div>
     </div>
     <hr>
@@ -15,7 +15,7 @@
         <button class="btn-add-record" (click)="sphService.addEmptyRecordRow()">Add Record</button>
       </div>
       <div class="slide-panel-records">
-        <slide-panel-record *ngFor="let record of sphService.data.records" [record]="record" [date]="sphService.data.date"></slide-panel-record>
+        <slide-panel-record *ngFor="let record of data.records" [record]="record" [date]="data.date"></slide-panel-record>
       </div>
     </div>
   </div>
