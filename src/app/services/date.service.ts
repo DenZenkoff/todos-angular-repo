@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,67 +8,36 @@ export class DateService {
   private _currentMonth: number;
   private _currentYear: number;
 
+  private dates$: BehaviorSubject<Array<Date>> = new BehaviorSubject<Array<Date>>([]);
+  get datesObs(): Observable<Array<Date>> { return this.dates$.asObservable(); }
+
   constructor() {
     const date = new Date();
 
     this._currentMonth = date.getMonth(); 
     this._currentYear = date.getFullYear(); 
+
+    this.setMonth(this._currentYear, this._currentMonth);
   }
 
-  getFirstDayOfMonth(): Date {
-    return this.gatFirstDay(this._currentYear, this._currentMonth);
+  setPreviousMonth() {
+    this.setMonth(this._currentYear, this._currentMonth = this._currentMonth - 1);
   }
 
-  getLastDayOfMonth(): Date {
-    return this.gatLastDay(this._currentYear, this._currentMonth);
+  setNextMonth() {
+    this.setMonth(this._currentYear, this._currentMonth = this._currentMonth + 1);
   }
 
-  getCurrentMonth(): Array<Date> {
-    return this.getMonth(this._currentYear, this._currentMonth);
-  }
-
-  getNextMonth(): Array<Date> {
-    return this.getMonth(this._currentYear, this._currentMonth = this._currentMonth + 1);
-  }
-
-  getPreviousMonth(): Array<Date> {
-    return this.getMonth(this._currentYear, this._currentMonth = this._currentMonth - 1);
-  }
-
-  private gatFirstDay(year: number, month: number): Date {
-    return new Date(year, month, 1);
-  }  
-  
-  private gatLastDay(year: number, month: number): Date {
-    return new Date(year, month + 1, 0);
-  }
-
-  private getMonth(year: number, month: number): Array<Date> {
+  private setMonth(year: number, month: number) {
     const dates = new Array<Date>();
-    const numberOfCells = 41;
-
     const firstDay = new Date(year, month, 1);
     const lastDay = new Date(year, month + 1, 0);
-    const dayOfWeek = firstDay.getDay();
-
-    if (dayOfWeek == 0) {
-      for(let i = 6; i > 0; i--)
-        dates.length++;
-    } else {
-      for(let i = dayOfWeek - 1; i > 0; i--)
-        dates.length++; 
-    }
 
     while (firstDay <= lastDay) {
       dates.push(new Date(firstDay));
       firstDay.setDate(firstDay.getDate() + 1);
     }
 
-    if (dates.length < numberOfCells) {
-      for(let i = dates.length - 1; i < numberOfCells; i++)
-        dates.length++;
-    }
-
-    return dates;
+    this.dates$.next(dates);
   }
 }

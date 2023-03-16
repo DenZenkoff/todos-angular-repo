@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { CellHelperService } from 'src/app/services/helpers/cell-helper.service';
-import { SlidePanelHelperService } from 'src/app/services/helpers/slide-panel-helper.service';
+import { Cell } from 'src/app/classes/cell/cell';
+import { CellService } from 'src/app/services/helpers/cell.service';
 
 @Component({
   selector: 'todos-calendar',
@@ -8,13 +8,7 @@ import { SlidePanelHelperService } from 'src/app/services/helpers/slide-panel-he
   styleUrls: ['./calendar.component.scss']
 })
 export class CalendarComponent {
-  @Input() dates: Array<Date>;
+  @Input() cells: Array<Cell>;
 
-  constructor(
-    private sphService: SlidePanelHelperService,
-    public chService: CellHelperService) { }
-
-  onCellClick_Handler(date: Date) {
-    this.sphService.openSlidePanel(date);
-  }
+  constructor(public cellService: CellService) { }
 }

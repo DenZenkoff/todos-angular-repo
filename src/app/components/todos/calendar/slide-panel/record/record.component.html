@@ -1,7 +1,17 @@
 <div class="record-wrapper">
     <div class="record-content">
-        <input type="text" [(ngModel)]="record.text" [disabled]="!record.isNew" placeholder="Enter text here...">
-        <button class="save-btn" (click)="rdhService.saveRecord(date, record.id)" [hidden]="!record.isNew"><img class="img-save"></button>
-        <button class="delete-btn" (click)="rdhService.removeRecord(date, record.id)"><img class="img-delete"></button>        
+        <input type="text" 
+            [(ngModel)]="record.text" 
+            [disabled]="!record.isNew" 
+            placeholder="Enter text here...">
+        <button class="save-btn" 
+            (click)="recordService.saveRecord(date, record.id)" 
+            [hidden]="!record.isNew">
+            <img class="img-save">
+        </button>
+        <button class="delete-btn" 
+            (click)="recordService.removeRecord(date, record.id)">
+            <img class="img-delete">
+        </button>        
     </div>
 </div>

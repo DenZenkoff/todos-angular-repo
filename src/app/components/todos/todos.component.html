@@ -1,10 +1,10 @@
 <div class="todos-wrapper">
     <div class="left-side-wrapper">
         <div class="pager-wrapper">
-            <todos-pager [fromDate]="dateService.getFirstDayOfMonth()" [toDate]="dateService.getLastDayOfMonth()"></todos-pager>
+            <todos-pager [fromDate]="fromDate" [toDate]="toDate"></todos-pager>
         </div>
         <div class="calendar-wrapper">
-            <todos-calendar [dates]="dateService.getCurrentMonth()"></todos-calendar>
+            <todos-calendar [cells]="cells"></todos-calendar>
         </div>
     </div>
 </div>

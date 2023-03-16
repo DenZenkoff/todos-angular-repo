@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { CellData } from 'src/app/classes/cell-data';
-import { CellHelperService } from 'src/app/services/helpers/cell-helper.service';
+import { Component, Input } from '@angular/core';
+import { Cell } from 'src/app/classes/cell/cell';
+import { SlidePanelService } from 'src/app/services/helpers/slide-panel.service';
 
 @Component({
   selector: 'calendar-cell',
@@ -8,9 +8,9 @@ import { CellHelperService } from 'src/app/services/helpers/cell-helper.service'
   styleUrls: ['./cell.component.scss']
 })
 export class CellComponent {
-  @Input() data: CellData;
+  @Input() cell: Cell;
   
-  @Output() onCellClick_Event = new EventEmitter<Date>();
-  
-  constructor(public chServise: CellHelperService) { }
+  constructor(private slidePanelService: SlidePanelService) { }
+
+  onCell_Click() { this.slidePanelService.openSlidePanel(this.cell.data.date); }
 }

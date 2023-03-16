@@ -1,10 +1,13 @@
-<div class="cell-wrapper" [ngClass]="chServise.getCellStyle(data)" [hidden]="!data.date">
-    <div class="cell" (click)="onCellClick_Event.emit(data.date)">
+<div class="cell-wrapper" 
+    [ngClass]="cell.style" 
+    [hidden]="cell.isHidden">
+    <div class="cell" 
+        (click)="onCell_Click()">
         <div class="top-section">
-            <p>{{ data.date | date:'fullDate' }}</p>
+            <p>{{ cell.data.date | date:'fullDate' }}</p>
         </div>
         <div class="bottom-section">
-            <p>{{ data.recordsCount | todosCounter:'cellRecords' }}</p>
+            <p>{{ cell.data.recordsCount | todosCounter:'cellRecords' }}</p>
         </div>
     </div>
 </div>

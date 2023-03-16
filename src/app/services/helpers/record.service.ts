@@ -5,7 +5,7 @@ import { TodoDataService } from 'src/app/services/todo-data.service';
 @Injectable({
   providedIn: 'root'
 })
-export class RecordDataHelperService {
+export class RecordService {
   private _records: Array<RecordData>;
   set records(records: Array<RecordData>) { this._records = records; }
 

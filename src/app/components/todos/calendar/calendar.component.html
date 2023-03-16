@@ -1,6 +1,7 @@
 <div class="calendar-wrapper">
-    <calendar-cell class="calendar-cell" *ngFor="let date of dates" 
-        [data]="chService.getCellData(date)" (onCellClick_Event)="onCellClick_Handler($event)">
+    <calendar-cell class="calendar-cell" 
+        *ngFor="let cell of cells" 
+        [cell]="cell">
     </calendar-cell>
 </div>
 

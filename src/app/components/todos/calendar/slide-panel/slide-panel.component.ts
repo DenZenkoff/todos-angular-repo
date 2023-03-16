@@ -1,7 +1,8 @@
 import { Component, OnDestroy, OnInit} from '@angular/core';
-import { Subject, takeUntil } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { SlidePanelData } from 'src/app/classes/slide-panel-data';
-import { SlidePanelHelperService } from 'src/app/services/helpers/slide-panel-helper.service';
+import { Styles } from 'src/app/enums/styles';
+import { SlidePanelService } from 'src/app/services/helpers/slide-panel.service';
 
 @Component({
   selector: 'calendar-slide-panel',
@@ -9,20 +10,24 @@ import { SlidePanelHelperService } from 'src/app/services/helpers/slide-panel-he
   styleUrls: ['./slide-panel.component.scss']
 })
 export class SlidePanelComponent implements OnInit, OnDestroy {
-  private unsubscribe$: Subject<boolean> = new Subject<boolean>();
+  private subsciptions$: Subscription[] = [];
 
   data: SlidePanelData;
+  displayStyle: string;
 
-  constructor(private sphService: SlidePanelHelperService) { }
+  constructor(public slidePanelService: SlidePanelService) { }
   
   ngOnInit(): void {
-    this.sphService.dataObs
-      .pipe(takeUntil(this.unsubscribe$))
-      .subscribe(data => this.data = data);
+    this.subsciptions$.push(this.slidePanelService.dataObs
+      .subscribe(data => this.data = data)
+    );
+    this.subsciptions$.push(this.slidePanelService.isVisibleObs
+      .subscribe(isVisible => this.displayStyle = isVisible ? Styles.show : Styles.hide)
+    );
   }
 
   ngOnDestroy(): void {
-    this.unsubscribe$.next(true);
-    this.unsubscribe$.complete();
+    this.subsciptions$.forEach(s => s.unsubscribe());
+    this.subsciptions$ = [];
   }
 }
