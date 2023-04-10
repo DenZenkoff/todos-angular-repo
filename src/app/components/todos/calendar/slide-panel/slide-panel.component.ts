@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit} from '@angular/core';
 import { Subscription } from 'rxjs';
 import { SlidePanelData } from 'src/app/classes/slide-panel-data';
 import { Styles } from 'src/app/enums/styles';
-import { SlidePanelService } from 'src/app/services/helpers/slide-panel.service';
+import { SlidePanelService } from 'src/app/services/components/slide-panel.service';
 
 @Component({
   selector: 'calendar-slide-panel',
@@ -15,7 +15,7 @@ export class SlidePanelComponent implements OnInit, OnDestroy {
   data: SlidePanelData;
   displayStyle: string;
 
-  constructor(public slidePanelService: SlidePanelService) { }
+  constructor(private slidePanelService: SlidePanelService) { }
   
   ngOnInit(): void {
     this.subsciptions$.push(this.slidePanelService.dataObs
@@ -29,5 +29,13 @@ export class SlidePanelComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subsciptions$.forEach(s => s.unsubscribe());
     this.subsciptions$ = [];
+  }
+
+  onClose_Click() {
+    this.slidePanelService.closeSlidePanel();
+  }
+
+  onAddRow_Click() {
+    this.slidePanelService.addEmptyRecordRow();
   }
 }

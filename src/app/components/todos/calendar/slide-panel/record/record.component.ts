@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { RecordData } from 'src/app/classes/record-data';
-import { RecordService } from 'src/app/services/helpers/record.service';
+import { RecordService } from 'src/app/services/components/record.service';
 
 @Component({
   selector: 'slide-panel-record',

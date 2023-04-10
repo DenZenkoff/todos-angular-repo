@@ -1,12 +1,12 @@
 <div class="slide-panel-wrapper" 
     [ngClass]="displayStyle" 
-    clickedOutside (clicked)="slidePanelService.closeSlidePanel()">
+    clickedOutside (clicked)="onClose_Click()">
     <div class="slide-panel-content" 
         [ngClass]="displayStyle">
         <div class="slide-panel-header">
             <div class="header-close-section">
                 <button class="btn-close" 
-                    (click)="slidePanelService.closeSlidePanel()">
+                    (click)="onClose_Click()">
                     <img class="img-close">
                 </button>
             </div>
@@ -19,7 +19,7 @@
         <div class="slide-panel-records">
             <div class="slide-panel-btns">
                 <button class="btn-add-record" 
-                    (click)="slidePanelService.addEmptyRecordRow()">Add Record
+                    (click)="onAddRow_Click()">Add Record
                 </button>
             </div>
             <div class="slide-panel-records">

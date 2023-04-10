@@ -2,8 +2,8 @@ import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Cell } from 'src/app/classes/cell/cell';
 import { DateService } from 'src/app/services/date.service';
-import { CalendarService } from 'src/app/services/helpers/calendar.service';
-import { SlidePanelService } from 'src/app/services/helpers/slide-panel.service';
+import { CalendarService } from 'src/app/services/components/calendar.service';
+import { SlidePanelService } from 'src/app/services/components/slide-panel.service';
 
 @Component({
   selector: 'app-todos',

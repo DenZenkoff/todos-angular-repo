@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { SlidePanelData } from 'src/app/classes/slide-panel-data';
-import { Styles } from 'src/app/enums/styles';
 import { TodoDataService } from 'src/app/services/todo-data.service';
-import { RecordService } from 'src/app/services/helpers/record.service';
+import { RecordService } from 'src/app/services/components/record.service';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
@@ -20,6 +19,7 @@ export class SlidePanelService {
 
   openSlidePanel(date: Date) {
     const data = this.getData(date);
+    
     this._isVisible$.next(true);
     this._data$.next(data);
 
@@ -35,6 +35,9 @@ export class SlidePanelService {
   }
 
   private getData(date: Date): SlidePanelData {
-    return new SlidePanelData(new Date(date), this.todoDataService.getTodos(date));
+    const day = new Date(date);
+    const records = this.todoDataService.getTodos(date);
+
+    return new SlidePanelData(day, records);
   }
 }

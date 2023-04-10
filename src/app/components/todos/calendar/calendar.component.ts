@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Cell } from 'src/app/classes/cell/cell';
-import { CellService } from 'src/app/services/helpers/cell.service';
+import { CellService } from 'src/app/services/components/cell.service';
 
 @Component({
   selector: 'todos-calendar',

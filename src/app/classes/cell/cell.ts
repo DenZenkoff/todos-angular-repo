@@ -1,3 +1,4 @@
+import { Styles } from "src/app/enums/styles";
 import { CellData } from "./cell-data";
 
 export class Cell {
@@ -5,9 +6,9 @@ export class Cell {
     style: string;
     isHidden: boolean;
 
-    constructor(data?: CellData, style?: string, isHidden?: boolean) {
+    constructor(data?: CellData, isHidden?: boolean) {
         this.data = data ?? new CellData();
-        this.style = style ?? '';
+        this.style = data?.isWorkdate ? Styles.workday : Styles.holiday;
         this.isHidden = isHidden ?? true;
     }
 }

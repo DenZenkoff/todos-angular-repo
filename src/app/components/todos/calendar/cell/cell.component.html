@@ -7,7 +7,7 @@
             <p>{{ cell.data.date | date:'fullDate' }}</p>
         </div>
         <div class="bottom-section">
-            <p>{{ cell.data.recordsCount | todosCounter:'cellRecords' }}</p>
+            <p>{{ onChangeRecords(cell.data.date) | todosCounter:'cellRecords' }}</p>
         </div>
     </div>
 </div>
